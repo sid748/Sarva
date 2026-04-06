@@ -106,35 +106,57 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // CTA ripple hover effect
-  const ctaButtons = document.querySelectorAll('.quote-btn, .hero-btn, .contact-btn, .quote-mobile-btn');
+  function initializeRippleEffects() {
+    const ctaSelectors = '.quote-btn, .hero-btn, .contact-btn, .quote-mobile-btn';
+    const ctaButtons = document.querySelectorAll(ctaSelectors);
+    
+    console.log('[Ripple Effect] Found', ctaButtons.length, 'CTA buttons');
 
-  ctaButtons.forEach(btn => {
-    let ripple = btn.querySelector('.cta-ripple');
-    if (!ripple) {
-      ripple = document.createElement('span');
-      ripple.className = 'cta-ripple';
-      btn.appendChild(ripple);
-    }
+    ctaButtons.forEach((btn, index) => {
+      // Ensure proper positioning context
+      if (window.getComputedStyle(btn).position === 'static') {
+        btn.style.position = 'relative';
+      }
 
-    btn.addEventListener('mouseenter', function (e) {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.style.width = '500px';
-      ripple.style.height = '500px';
+      // Create or find ripple element
+      let ripple = btn.querySelector('.cta-ripple');
+      if (!ripple) {
+        ripple = document.createElement('span');
+        ripple.className = 'cta-ripple';
+        btn.appendChild(ripple);
+        console.log('[Ripple Effect] Created ripple span for button', index);
+      }
+
+      // Mouseenter handler: position ripple at cursor and expand
+      btn.addEventListener('mouseenter', function (e) {
+        const rect = btn.getBoundingClientRect();
+        const relativeX = e.clientX - rect.left;
+        const relativeY = e.clientY - rect.top;
+        
+        // Set ripple position to cursor location
+        ripple.style.left = relativeX + 'px';
+        ripple.style.top = relativeY + 'px';
+        
+        // Expand ripple
+        setTimeout(() => {
+          ripple.style.width = '500px';
+          ripple.style.height = '500px';
+        }, 10);
+      });
+
+      // Mouseleave handler: collapse ripple
+      btn.addEventListener('mouseleave', function (e) {
+        ripple.style.width = '0';
+        ripple.style.height = '0';
+      });
     });
+  }
 
-    btn.addEventListener('mouseleave', function (e) {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      ripple.style.width = '0';
-      ripple.style.height = '0';
-    });
-  });
+  // Initialize ripple effects on DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeRippleEffects);
+  } else {
+    initializeRippleEffects();
+  }
 
 });
