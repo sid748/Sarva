@@ -55,20 +55,22 @@ section {
 .hero-btn,
 .contact-btn,
 .quote-mobile-btn {
-  background: #4caf50;
-  color: #fff;
-  border-radius: 30px;
-  padding: 8px 18px;
-  border: none;
+  background: #4caf50 !important;
+  color: #fff !important;
+  border-radius: 30px !important;
+  border: none !important;
   opacity: 1 !important;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  cursor: pointer !important;
+  transition: color 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .quote-btn {
-  padding: 8px 18px;
+  padding: 8px 18px !important;
 }
 
 .hero-btn {
