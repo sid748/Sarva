@@ -61,11 +61,31 @@ section {
   transform: none !important;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #45a049;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.quote-btn:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .quote-btn:hover {
-  background: #45a049;
-  transform: scale(1.05);
+  color: #fff;
 }
 
 /* HAMBURGER */
@@ -196,11 +216,31 @@ section {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-mobile-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #45a049;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.quote-mobile-btn:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .quote-mobile-btn:hover {
-  background: #45a049;
-  transform: scale(1.05);
+  color: #fff;
 }
 
 /* ONLY MOBILE */
@@ -259,11 +299,32 @@ section {
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #45a049;
+  border-radius: 40px;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.hero-btn:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .hero-btn:hover {
-  background: #45a049;
-  transform: scale(1.05);
+  color: #fff;
+  border-color: #45a049;
 }
 
 /* DOTS */
@@ -700,11 +761,31 @@ section {
   font-weight: 500;
   transition: all 0.3s ease;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #45a049;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s ease;
+  z-index: -1;
+}
+
+.contact-btn:hover::before {
+  width: 100%;
+  height: 100%;
 }
 
 .contact-btn:hover {
-  background: #45a049;
-  transform: scale(1.05);
+  color: #fff;
 }
 
 /* RESPONSIVE */
