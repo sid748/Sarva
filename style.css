@@ -58,7 +58,14 @@ section {
   padding: 8px 18px;
   border: none;
   opacity: 1 !important;
-  transform:none !important;
+  transform: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quote-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
 }
 
 /* HAMBURGER */
@@ -187,6 +194,13 @@ section {
   border-radius: 30px;
   padding: 10px 20px;
   border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.quote-mobile-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
 }
 
 /* ONLY MOBILE */
@@ -684,12 +698,14 @@ section {
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 500;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-/* .contact-btn:hover {
-  background: #388e3c;
-} */
+.contact-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
