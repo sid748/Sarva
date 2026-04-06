@@ -83,6 +83,11 @@ section {
 }
 
 
+a.text-decoration-none .quote-btn {
+  transform: none !important;
+}
+
+
 
 /* CTA */
 .quote-btn,
@@ -104,7 +109,7 @@ section {
 }
 
 .quote-btn {
-  padding: 6px 16px !important;
+  padding: 12px 28px !important;
   font-size: 14px !important;
   line-height: 1;
 }
@@ -140,6 +145,7 @@ section {
   height: 0 !important;
   background: rgba(69, 160, 73, 0.6) !important;
   border-radius: 50% !important;
+  color:#ffffff;
   transform: translate(-50%, -50%) !important;
   transition: width 0.4s ease, height 0.4s ease !important;
   z-index: 0 !important;
