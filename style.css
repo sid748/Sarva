@@ -32,7 +32,21 @@ section {
   border-radius: 60px;
   padding: 12px 30px;
   margin: auto;
+  display: flex !important;
+  align-items: center !important;
   /* box-shadow: 0 8px 30px rgba(0,0,0,0.08); */
+}
+
+/* Navbar CTA button wrapper */
+.custom-navbar .d-lg-block {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto;
+}
+
+.custom-navbar .d-lg-block a {
+  display: flex;
+  align-items: center;
 }
 
 /* STICKY */
