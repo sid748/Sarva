@@ -51,42 +51,71 @@ section {
 
 
 /* CTA */
-.quote-btn {
+.quote-btn,
+.hero-btn,
+.contact-btn,
+.quote-mobile-btn {
   background: #4caf50;
   color: #fff;
   border-radius: 30px;
   padding: 8px 18px;
   border: none;
   opacity: 1 !important;
-  transform: none !important;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.quote-btn::before {
-  content: '';
+.quote-btn {
+  padding: 8px 18px;
+}
+
+.hero-btn {
+  border-radius: 40px;
+  padding: 12px 28px;
+}
+
+.contact-btn,
+.quote-mobile-btn {
+  border-radius: 30px;
+  padding: 12px 28px;
+}
+
+.quote-mobile-btn {
+  padding: 10px 20px;
+}
+
+.quote-btn:hover,
+.hero-btn:hover,
+.contact-btn:hover,
+.quote-mobile-btn:hover {
+  color: #fff;
+}
+
+.quote-btn .cta-ripple,
+.hero-btn .cta-ripple,
+.contact-btn .cta-ripple,
+.quote-mobile-btn .cta-ripple {
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 0;
   height: 0;
   background: #45a049;
-  border-radius: 30px;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
+  transition: width 0.4s ease, height 0.4s ease;
   z-index: -1;
+  pointer-events: none;
 }
 
-.quote-btn:hover::before {
-  width: 100%;
-  height: 100%;
+.quote-btn:hover .cta-ripple,
+.hero-btn:hover .cta-ripple,
+.contact-btn:hover .cta-ripple,
+.quote-mobile-btn:hover .cta-ripple {
+  width: 500px;
+  height: 500px;
 }
 
-.quote-btn:hover {
-  color: #fff;
-}
 
 /* HAMBURGER */
 .custom-toggler {
@@ -207,42 +236,6 @@ section {
   height: 30px;
 }
 
-/* CTA */
-.quote-mobile-btn {
-  background: #4caf50;
-  color: #fff;
-  border-radius: 30px;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.quote-mobile-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: #45a049;
-  border-radius: 30px;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
-  z-index: -1;
-}
-
-.quote-mobile-btn:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
-.quote-mobile-btn:hover {
-  color: #fff;
-}
-
 /* ONLY MOBILE */
 @media (min-width: 992px) {
   .mobile-menu {
@@ -289,45 +282,7 @@ section {
   line-height: 1.4;
 }
 
-.hero-btn {
-  background: #4caf50;
-  border-radius: 40px;
-  padding: 12px 28px;
-  color: #fff;
-  border: 1px solid #fff;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: #45a049;
-  border-radius: 40px;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
-  z-index: -1;
-}
-
-.hero-btn:hover::before {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-btn:hover {
-  color: #fff;
-  border-color: #45a049;
-}
-
-/* DOTS */
+./* DOTS */
 .carousel-indicators {
   bottom: 40px;
   left: 0;
@@ -759,29 +714,10 @@ section {
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-}
-
-.contact-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: #45a049;
-  border-radius: 30px;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
-  z-index: -1;
-}
-
-.contact-btn:hover::before {
-  width: 100%;
-  height: 100%;
 }
 
 .contact-btn:hover {

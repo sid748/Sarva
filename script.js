@@ -105,4 +105,36 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // CTA ripple hover effect
+  const ctaButtons = document.querySelectorAll('.quote-btn, .hero-btn, .contact-btn, .quote-mobile-btn');
+
+  ctaButtons.forEach(btn => {
+    let ripple = btn.querySelector('.cta-ripple');
+    if (!ripple) {
+      ripple = document.createElement('span');
+      ripple.className = 'cta-ripple';
+      btn.appendChild(ripple);
+    }
+
+    btn.addEventListener('mouseenter', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.style.width = '500px';
+      ripple.style.height = '500px';
+    });
+
+    btn.addEventListener('mouseleave', function (e) {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.style.width = '0';
+      ripple.style.height = '0';
+    });
+  });
+
 });
